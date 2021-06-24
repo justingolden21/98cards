@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>98 Cards Tracker</title>
+	<style>
+		body, input, button, td {
+			font-family: Helvetica;
+			margin: 0.5rem;
+			padding: 0.5rem;
+		}
+		table {
+			border-spacing: 0.25rem;
+		}
+		td, button, input {
+			border: 2px solid #ddd;
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="window.location.reload()">CLEAR</button>
+	98 Cards Tracker<br>
+	<input autofocus id="input" type="number">
+	<table id="table"></table>
+	<script>
+		let d = document, get = d.getElementById.bind(d);
+		let html = '<tr><td></td><td></td>';
+		for(let i=2; i<=99; i++) {
+			if(i%10==0) html += '</tr><tr>';
+			html += `<td id="tile-${i}">${i}</td>`;
+		}
+		get('table').innerHTML = html + '</tr>';
+	
+		let inp = get('input');
+		inp.onchange = e => {
+			let tile = get('tile-'+parseInt(inp.value) );
+			if(tile) {
+				tile.style.backgroundColor = '#333';
+				tile.style.color = '#fff';
+			}
+			inp.value = '';
+		};
+		</script>
+</body>
+</html>
