@@ -1,0 +1,9 @@
+todo
+fullscreen btn
+info btn
+animations/fade in black td
+show how many cards gone vs remaining
+input for count how many cards between blank and blank
+new tool for finding numbers within exactly 10 in hand and in play
+share btn
+game state calculator based on percentage of cards remaining and cards up on all 4 piles
